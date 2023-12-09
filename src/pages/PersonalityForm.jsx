@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LikertScale from "../components/LikertScale";
 import DropdownMenu from "../components/DropdownMenu";
 import { Box, Button } from "@mui/material";
-import NavBar from "../components/NavBar";
+
 
 // The main component that renders the form
 function PersonalityForm(props) {
@@ -47,7 +47,7 @@ function PersonalityForm(props) {
 
   return (
     <>
-      <NavBar />
+      
       <Box
         sx={{
           display: "flex",
@@ -55,7 +55,8 @@ function PersonalityForm(props) {
           justifyContent: "center",
           flexDirection: "column",
           height: "100vh",
-          width: "100vw",
+          width: "50vw",
+          
         }}
       >
         <Box
@@ -65,18 +66,21 @@ function PersonalityForm(props) {
             flexDirection: "column",
             padding: "0.5em",
             gap: "1em",
+            height:"70vh",
+            border:"2px solid red"
           }}
           component="form"
           onSubmit={handleSubmit}
         >
           <LikertScale
+            
             question={likertQuestion}
             options={likertOptions}
             onChange={handleChangeLikertScale}
           />
           <DropdownMenu
             question={dropdownQuestion}
-            options={dropdownOptions}
+            options={dropdownOptions }
             value={genre}
             onChange={handleChangeDropDown}
           />
